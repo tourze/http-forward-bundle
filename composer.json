@@ -36,7 +36,7 @@
     "tourze/doctrine-timestamp-bundle": "0.0.*",
     "tourze/easy-admin-enum-field-bundle": "0.0.*",
     "tourze/easy-admin-menu-bundle": "0.1.*",
-    "tourze/enum-extra": "0.1.*",
+    "tourze/enum-extra": "1.*",
     "tourze/symfony-cron-job-bundle": "0.1.*",
     "tourze/symfony-dependency-service-loader": "1.*",
     "tourze/symfony-routing-auto-loader-bundle": "0.0.*"
