@@ -1,0 +1,38 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  _instanceof:
+    Tourze\HttpForwardBundle\Middleware\MiddlewareInterface:
+      tags: ['http_forward.middleware']
+
+  # Twig Extensions
+  Tourze\HttpForwardBundle\Twig\MiddlewareConfigExtension:
+    tags: ['twig.extension']
+
+  Tourze\HttpForwardBundle\Controller\:
+    resource: '../../Controller/'
+  Tourze\HttpForwardBundle\EventSubscriber\:
+    resource: '../../EventSubscriber/'
+  Tourze\HttpForwardBundle\Middleware\:
+    resource: '../../Middleware/'
+    public: true
+  Tourze\HttpForwardBundle\Repository\:
+    resource: '../../Repository/'
+  Tourze\HttpForwardBundle\Service\:
+    resource: '../../Service/'
+  Tourze\HttpForwardBundle\Command\:
+    resource: '../../Command/'
+
+  # 替换默认的 ChoiceConfigurator 以修复 array_flip 警告
+  Tourze\HttpForwardBundle\Field\Configurator\SafeChoiceConfigurator:
+    tags:
+      - { name: 'ea.field_configurator', priority: 500 }
+
+  # 直接覆盖默认的 ChoiceConfigurator 服务
+  EasyCorp\Bundle\EasyAdminBundle\Field\Configurator\ChoiceConfigurator:
+    class: Tourze\HttpForwardBundle\Field\Configurator\SafeChoiceConfigurator
+
+  # 负载均衡服务使用静态工厂方法，无需注册具体实现
