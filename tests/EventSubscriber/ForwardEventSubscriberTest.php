@@ -10,16 +10,14 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Tourze\HttpForwardBundle\Event\ForwardEvents;
 use Tourze\HttpForwardBundle\EventSubscriber\ForwardEventSubscriber;
-use Tourze\PHPUnitSymfonyKernelTest\AbstractIntegrationTestCase;
+use Tourze\PHPUnitSymfonyKernelTest\AbstractEventSubscriberTestCase;
 
 /**
  * @internal
  */
-// @phpstan-ignore symplify.forbiddenExtendOfNonAbstractClass
-// @phpstan-ignore eventSubscriberTest.mustInheritAbstractIntegrationTestCase
 #[CoversClass(ForwardEventSubscriber::class)]
 #[RunTestsInSeparateProcesses]
-final class ForwardEventSubscriberTest extends AbstractIntegrationTestCase
+final class ForwardEventSubscriberTest extends AbstractEventSubscriberTestCase
 {
     protected static function getEventSubscriberClass(): string
     {

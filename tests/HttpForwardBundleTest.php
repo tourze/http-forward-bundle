@@ -11,7 +11,6 @@ use Tourze\PHPUnitSymfonyKernelTest\AbstractBundleTestCase;
 
 /**
  * @internal
- * @phpstan-ignore symplify.forbiddenExtendOfNonAbstractClass
  */
 #[CoversClass(HttpForwardBundle::class)]
 #[RunTestsInSeparateProcesses]
