@@ -211,14 +211,13 @@ class HealthCheckCommandTest extends AbstractCommandTestCase
         $this->httpClient = $this->createMock(HttpClientInterface::class);
         $this->healthCheckService = $this->createMock(HealthCheckService::class);
 
-        // 直接手动构造 Command 实例，注入 Mock 依赖
-        // 避免使用 container->set()，因为服务可能已经被初始化
-        $this->command = new HealthCheckCommand(
-            $this->backendRepository,
-            self::getService(EntityManagerInterface::class),
-            $this->healthCheckService
-        );
+        // 在服务容器中注册Mock服务
+        $container = self::getContainer();
+        $container->set(BackendRepository::class, $this->backendRepository);
+        $container->set(HealthCheckService::class, $this->healthCheckService);
 
+        // 从服务容器获取命令实例
+        $this->command = self::getService(HealthCheckCommand::class);
         $this->commandTester = new CommandTester($this->command);
     }
 }
