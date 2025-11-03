@@ -34,9 +34,9 @@ composer require tourze/http-forward-bundle
 1. 访问 `/admin`
 2. 进入 **HTTP Forward** → **Forward Rules**
 3. 创建新规则，配置：
-   - **匹配路径**：`/api/*`
-   - **后端URL**：`https://api.example.com`
-   - **中间件**：选择需要的中间件
+    - **匹配路径**：`/api/*`
+    - **后端URL**：`https://api.example.com`
+    - **中间件**：选择需要的中间件
 
 ### 2. 使用转发控制器
 
@@ -81,10 +81,10 @@ class YourController
 
 1. 编辑转发规则
 2. 在 **Middlewares** 字段：
-   - 从下拉菜单选择中间件
-   - 点击"添加"按钮
-   - 展开配置表单填写参数
-   - 拖拽调整执行顺序
+    - 从下拉菜单选择中间件
+    - 点击"添加"按钮
+    - 展开配置表单填写参数
+    - 拖拽调整执行顺序
 
 详见：[中间件配置指南](MIDDLEWARE_CONFIG_GUIDE.md)
 

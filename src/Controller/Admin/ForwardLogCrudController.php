@@ -69,13 +69,13 @@ final class ForwardLogCrudController extends AbstractCrudController
             ->add(EntityFilter::new('accessKey'))
             ->add(
                 ChoiceFilter::new('status')
-                ->setChoices([
-                    '准备中' => ForwardLogStatus::PENDING->value,
-                    '发送中' => ForwardLogStatus::SENDING->value,
-                    '接收中' => ForwardLogStatus::RECEIVING->value,
-                    '已完成' => ForwardLogStatus::COMPLETED->value,
-                    '失败' => ForwardLogStatus::FAILED->value,
-                ])
+                    ->setChoices([
+                        '准备中' => ForwardLogStatus::PENDING->value,
+                        '发送中' => ForwardLogStatus::SENDING->value,
+                        '接收中' => ForwardLogStatus::RECEIVING->value,
+                        '已完成' => ForwardLogStatus::COMPLETED->value,
+                        '失败' => ForwardLogStatus::FAILED->value,
+                    ])
             )
             ->add(NumericFilter::new('responseStatus'))
             ->add(BooleanFilter::new('fallbackUsed'))

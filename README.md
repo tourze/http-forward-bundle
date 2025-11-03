@@ -34,9 +34,9 @@ Create forwarding rules via EasyAdmin:
 1. Visit `/admin`
 2. Navigate to **HTTP Forward** → **Forward Rules**
 3. Create a new rule with:
-   - **Path Pattern**: `/api/*`
-   - **Backend URL**: `https://api.example.com`
-   - **Middlewares**: Select required middlewares
+    - **Path Pattern**: `/api/*`
+    - **Backend URL**: `https://api.example.com`
+    - **Middlewares**: Select required middlewares
 
 ### 2. Use Forward Controller
 
@@ -81,10 +81,10 @@ Configure middlewares via drag-and-drop in EasyAdmin:
 
 1. Edit a forwarding rule
 2. In the **Middlewares** field:
-   - Select middleware from dropdown
-   - Click "Add" button
-   - Expand configuration form to fill parameters
-   - Drag to adjust execution order
+    - Select middleware from dropdown
+    - Click "Add" button
+    - Expand configuration form to fill parameters
+    - Drag to adjust execution order
 
 See: [Middleware Configuration Guide](MIDDLEWARE_CONFIG_GUIDE.md)
 
