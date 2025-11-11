@@ -23,7 +23,7 @@ class AdminMenuTest extends AbstractEasyAdminMenuTestCase
 
     protected function onSetUp(): void
     {
-        $this->linkGenerator = new class () implements LinkGeneratorInterface {
+        $this->linkGenerator = new class implements LinkGeneratorInterface {
             public function getCurdListPage(string $entityClass): string
             {
                 return match ($entityClass) {

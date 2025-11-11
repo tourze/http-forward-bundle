@@ -113,7 +113,7 @@ class ForwardLogStatusTest extends AbstractEnumTestCase
     {
         // Test basic enum functionality
         $this->assertTrue(enum_exists(ForwardLogStatus::class));
-        $this->assertSame('string', (new \ReflectionEnum(ForwardLogStatus::class))->getBackingType()?->getName());
+        $this->assertSame('string', new \ReflectionEnum(ForwardLogStatus::class)->getBackingType()?->getName());
     }
 
     public function testFromValue(): void

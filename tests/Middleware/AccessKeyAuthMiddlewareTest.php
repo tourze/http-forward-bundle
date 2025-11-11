@@ -8,7 +8,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LoggerInterface;
-use Tourze\PHPUnitSymfonyKernelTest\AbstractIntegrationTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Tourze\AccessKeyBundle\Entity\AccessKey;
 use Tourze\HttpForwardBundle\Constant\RequestAttributes;
@@ -16,6 +15,7 @@ use Tourze\HttpForwardBundle\DTO\AuthorizationResult;
 use Tourze\HttpForwardBundle\Entity\ForwardLog;
 use Tourze\HttpForwardBundle\Middleware\AccessKeyAuthMiddleware;
 use Tourze\HttpForwardBundle\Service\AccessKeyAuthService;
+use Tourze\PHPUnitSymfonyKernelTest\AbstractIntegrationTestCase;
 
 /**
  * AccessKeyAuthMiddleware 的单元测试。

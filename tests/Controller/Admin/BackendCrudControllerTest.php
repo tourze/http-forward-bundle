@@ -144,6 +144,7 @@ final class BackendCrudControllerTest extends AbstractEasyAdminControllerTestCas
             $client = self::getClient();
             if (null === $client) {
                 self::markTestSkipped('Client is not available for integration testing');
+
                 return; // @phpstan-ignore-line (markTestSkipped exits, but PHPStan doesn't detect this)
             }
 
