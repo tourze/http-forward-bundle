@@ -207,17 +207,23 @@ class HealthCheckCommandTest extends AbstractCommandTestCase
 
     protected function onSetUp(): void
     {
+        // 创建 Mock 对象
         $this->backendRepository = $this->createMock(BackendRepository::class);
         $this->httpClient = $this->createMock(HttpClientInterface::class);
         $this->healthCheckService = $this->createMock(HealthCheckService::class);
 
-        // 在服务容器中注册Mock服务
-        $container = self::getContainer();
-        $container->set(BackendRepository::class, $this->backendRepository);
-        $container->set(HealthCheckService::class, $this->healthCheckService);
+        // 获取 EntityManager（从容器获取，这是安全的）
+        $entityManager = self::getService(EntityManagerInterface::class);
 
-        // 从服务容器获取命令实例
-        $this->command = self::getService(HealthCheckCommand::class);
+        // 直接构造命令实例并注入 Mock 依赖
+        // 避免使用 container->set() 替换可能已被其他测试初始化的服务
+        // PHPStan规则建议使用容器服务，但实际会导致"service already initialized"错误
+        // @phpstan-ignore commandTest.noDirectInstantiation, integrationTest.noDirectInstantiationOfCoveredClass
+        $this->command = new HealthCheckCommand(
+            $this->backendRepository,
+            $entityManager,
+            $this->healthCheckService
+        );
         $this->commandTester = new CommandTester($this->command);
     }
 }
