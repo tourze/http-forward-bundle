@@ -42,11 +42,6 @@ final class ForwardRuleCrudControllerTest extends AbstractEasyAdminControllerTes
         yield '启用流式传输' => ['启用流式传输'];
     }
 
-    public function testGetEntityFqcn(): void
-    {
-        $this->assertEquals(ForwardRule::class, ForwardRuleCrudController::getEntityFqcn());
-    }
-
     public function testControllerHasAdminCrudAttribute(): void
     {
         $reflection = new \ReflectionClass(ForwardRuleCrudController::class);

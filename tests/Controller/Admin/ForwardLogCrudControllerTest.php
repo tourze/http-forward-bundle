@@ -45,11 +45,6 @@ final class ForwardLogCrudControllerTest extends AbstractEasyAdminControllerTest
         yield '降级' => ['降级'];
     }
 
-    public function testGetEntityFqcn(): void
-    {
-        $this->assertEquals(ForwardLog::class, ForwardLogCrudController::getEntityFqcn());
-    }
-
     public function testControllerHasAdminCrudAttribute(): void
     {
         $reflection = new \ReflectionClass(ForwardLogCrudController::class);

@@ -416,7 +416,7 @@ interface ForwardServiceInterface {
 ```json
 {
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "symfony/framework-bundle": "^7.3",
         "symfony/http-client": "^7.3",
         "symfony/event-dispatcher": "^7.3",

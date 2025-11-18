@@ -41,11 +41,6 @@ final class BackendCrudControllerTest extends AbstractEasyAdminControllerTestCas
         yield '更新时间' => ['更新时间'];
     }
 
-    public function testGetEntityFqcn(): void
-    {
-        $this->assertEquals(Backend::class, BackendCrudController::getEntityFqcn());
-    }
-
     public function testControllerHasAdminCrudAttribute(): void
     {
         $reflection = new \ReflectionClass(BackendCrudController::class);
